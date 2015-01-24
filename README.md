@@ -75,7 +75,7 @@ dispatcher.register('SomeService', ['SomeStore', 'SomeOtherService'],
         function(evt) { ... });
 ```
 
-`.unregister()`
+`.unregister(id)`
 
 Removes a callback from the registry
 ```javascript
@@ -126,6 +126,9 @@ $.getJSON('/some/data')
 ```
 
 ___
+
+### Testing
+To run the tests for `behave-dispatcher` simply run `npm test`
 
 ### Release History
 
