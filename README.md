@@ -17,24 +17,25 @@ ___
 ```javascript
 
 /* cb1.js */
-const dispatcher = new BehaveDispatcher();
+import dispatcher from 'behave-dispatcher';
+
 var cb1 = function(evt) { console.log('I was registered first', evt); };
 dispatcher.register('cb1', ['cb2'], cb1);
 
 /* cb2.js */
-const dispatcher = new BehaveDispatcher();
+import dispatcher from 'behave-dispatcher';
+
 var cb2 = function(evt) { console.log('I was registered second', evt); };
 dispatcher.register('cb2', ['cb3'], cb2);
 
 /* cb3.js */
-const dispatcher = new BehaveDispatcher();
+import dispatcher from 'behave-dispatcher';
+
 var cb3 = function(evt) { console.log('I was registered third', evt); };
 dispatcher.register('cb3', cb3);
 
 /* main.js */
-require('./cb1');
-require('./cb2');
-require('./cb3');
+import dispatcher from 'behave-dispatcher';
 
 dispatcher.dispatch({ type: 'EXAMPLE_EVENT', data: { example: 'data' } });
 
@@ -53,7 +54,7 @@ The first parameter is the callback's `id`. In the Facebook implementation an `i
 
 By allowing you to use `ids` to identify your dependencies you can have better encapsulation around your code.
 
-`behave-dispatcher` is a singleton, meaning there should be only one for the entire applicaiton, as you can imagine that could lead to a lot of events, or the urge to skip the dispatcher now and then. If you find yourself in this situation then you need to look at organizing your events better. The dispatcher is ignorant of the event passed in to it. The example you saw above has a very simple schema because it is meant to be a simple example. I highly recommend spending a great deal of time thinking about how you will structure your event schema. I would also like to point out that Facebook only shows `stores` registering to the dispatcher, I personally believe that a data store is only one type of service, there are many other services that may want to register to the dispatcher, `web` services, `analytics` services, `logging` services, etc...
+`behave-dispatcher` is a singleton, meaning there should be only one for the entire application, as you can imagine that could lead to a lot of events, or the urge to skip the dispatcher now and then. If you find yourself in this situation then you need to look at organizing your events better. The dispatcher is ignorant of the event passed in to it. The example you saw above has a very simple schema because it is meant to be a simple example. I highly recommend spending a great deal of time thinking about how you will structure your event schema. I would also like to point out that Facebook only shows `stores` registering to the dispatcher, I personally believe that a data store is only one type of service, there are many other services that may want to register to the dispatcher, `web` services, `analytics` services, `logging` services, etc...
 
 You should be able to plug anything in to a dispatcher without having to worry about breaking something else in the application.
 ___
@@ -76,7 +77,7 @@ dispatcher.register('SomeService', ['SomeStore', 'SomeOtherService'],
 
 `.unregister()`
 
-Removes a callback from
+Removes a callback from the registry
 ```javascript
 import dispatcher from 'behave-dispatcher';
 
@@ -88,6 +89,8 @@ dispatcher.unregister('SomeStore');
 ```
 
 `.purge()`
+
+Removes all callbacks from the registry
 
 ```javascript
 import dispatcher from 'behave-dispatcher';
@@ -102,6 +105,8 @@ dispatcher.purge();
 ```
 
 `.dispatch(evt)`
+
+Dispatches an event to all callbacks in the registry
 
 ```javascript
 import dispatcher from 'behave-dispatcher';
