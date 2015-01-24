@@ -1,0 +1,42 @@
+{
+  "name": "behave-dispatcher",
+  "version": "0.1.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:behavejs/behave-dispatcher.git"
+  },
+  "keywords": [
+    "behave",
+    "behavejs",
+    "flux",
+    "dispatcher",
+    "events",
+    "data",
+    "architecture"
+  ],
+  "author": "kurtiskemple@gmail.com",
+  "license": "GPL",
+  "bugs": {
+    "url": "https://github.com/behavejs/behave-dispatcher/issues"
+  },
+  "homepage": "https://github.com/behavejs/behave-dispatcher",
+  "devDependencies": {
+    "6to5": "^2.12.6",
+    "6to5ify": "~3.1.2",
+    "browserify": "^8.1.1",
+    "grunt": "~0.4.5",
+    "load-grunt-config": "~0.16.0",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-jasmine": "~0.8.1",
+    "grunt-browserify": "~3.2.1",
+    "grunt-contrib-clean": "~0.6.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-6to5": "~2.0.0",
+    "sinon": "~1.12.2"
+  }
+}
