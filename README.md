@@ -130,6 +130,8 @@ ___
 ### Testing
 To run the tests for `behave-dispatcher` simply run `npm test`
 
+___
+
 ### Release History
 
 - 0.1.0 Initial release
