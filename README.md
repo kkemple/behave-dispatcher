@@ -7,14 +7,14 @@ Flux architecture (or procedural programming - [read this for more information](
 
 ### Install
 
-```bash
+```shell
 npm install --save behave-dispatcher
 ```
 ___
 
 ### Example
 
-```javascript
+```js
 
 /* cb1.js */
 import dispatcher from 'behave-dispatcher';
@@ -64,7 +64,7 @@ ___
 
 Adds the callback to the registry
 
-```javascript
+```js
 import dispatcher from 'behave-dispatcher';
 
 // register a callback with no dependencies
@@ -78,7 +78,7 @@ dispatcher.register('SomeService', ['SomeStore', 'SomeOtherService'],
 `.unregister(id)`
 
 Removes a callback from the registry
-```javascript
+```js
 import dispatcher from 'behave-dispatcher';
 
 // register a callback with no dependencies
@@ -92,7 +92,7 @@ dispatcher.unregister('SomeStore');
 
 Removes all callbacks from the registry
 
-```javascript
+```js
 import dispatcher from 'behave-dispatcher';
 
 // register a callback with no dependencies
@@ -108,7 +108,7 @@ dispatcher.purge();
 
 Dispatches an event to all callbacks in the registry
 
-```javascript
+```js
 import dispatcher from 'behave-dispatcher';
 
 // hit API, dispatch response
@@ -135,4 +135,5 @@ ___
 ### Release History
 
 - 0.1.0 Initial release
+- 0.1.1 Fixed broken syntax highlighting
 
