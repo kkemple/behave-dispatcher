@@ -1,5 +1,7 @@
 # behave-dispatcher
-A dispatcher for the flux architecture pattern recommended by behavejs
+A dispatcher for the flux architecture pattern recommended by BehaveJS
+
+[ ![Codeship Status for behavejs/behave-dispatcher](https://codeship.com/projects/f1f82d00-8676-0132-1893-6e1293eebb57/status?branch=master)](https://codeship.com/projects/58980)
 
 Flux architecture (or procedural programming - [read this for more information](https://neonbrand.com/blog/procedural-programming-vs-object-oriented-programming-a-review/) ) can be a great way to handle events in your application. However, just like any other event management architecture, there are a few ways to implement it.
 
@@ -65,6 +67,7 @@ ___
 Adds the callback to the registry
 
 ```js
+
 import dispatcher from 'behave-dispatcher';
 
 // register a callback with no dependencies
@@ -78,7 +81,9 @@ dispatcher.register('SomeService', ['SomeStore', 'SomeOtherService'],
 `.unregister(id)`
 
 Removes a callback from the registry
+
 ```js
+
 import dispatcher from 'behave-dispatcher';
 
 // register a callback with no dependencies
@@ -93,6 +98,7 @@ dispatcher.unregister('SomeStore');
 Removes all callbacks from the registry
 
 ```js
+
 import dispatcher from 'behave-dispatcher';
 
 // register a callback with no dependencies
@@ -109,6 +115,7 @@ dispatcher.purge();
 Dispatches an event to all callbacks in the registry
 
 ```js
+
 import dispatcher from 'behave-dispatcher';
 
 // hit API, dispatch response
@@ -136,4 +143,5 @@ ___
 
 - 0.1.0 Initial release
 - 0.1.1 Fixed broken syntax highlighting
+- 0.1.2 Added build badge
 
